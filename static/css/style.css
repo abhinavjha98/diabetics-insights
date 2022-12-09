@@ -1,0 +1,128 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+.main-section {
+    background-image: url(../Images/home-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    padding-bottom:7rem;
+}
+
+.main-header {
+    padding: 25px;
+}
+
+.bg-light {
+    background: linear-gradient(90.07deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.192) 99.84%) !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #293648;
+    font-weight: 600;
+    padding-left: 3rem;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #5376F2;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #5376F2!important;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.main-content-section{
+    padding-top:8rem;
+    padding-bottom:10rem;
+}
+.main-content h2 {
+    color: #121518;
+    font-weight: 700;
+    font-size: 40px;
+}
+.main-buttons{
+    display:flex;
+    align-items:center;
+}
+
+.main-content p {
+    color: #293648;
+    font-size: 500;
+    font-size: 18px;
+    opacity: 0.8;
+    line-height: 1.7;
+    padding-top: 1rem;
+}
+.main-buttons{
+    margin-top:1rem;
+}
+
+.check {
+    background: #5376F2;
+    border: 1px solid #4669E5;
+    box-shadow: 0px 8px 12px rgba(121, 112, 220, 0.18);
+    border-radius: 6px;
+    padding: 10px 25px;
+    color: #Fff;
+    font-weight: 500;
+}
+
+.donate {
+    background: #F7F7FE;
+    border: 1px solid #DFDEEC;
+    box-shadow: 0px 8px 12px rgba(121, 112, 220, 0.06);
+    border-radius: 6px;
+    padding: 10px 25px;
+    color: #5376F2;
+    font-weight: 500;
+    margin-left:2rem;
+}
+.logo img{
+    max-width: 200px;
+}
+@media (max-width:768px) {
+    .main-content-section {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+    .home-illustration{
+        margin-top:3rem;
+    }
+    .main-content h2 {
+        font-size: 22px;
+    }
+    .main-content p {
+        font-size: 16px;
+    }
+}
+@media (max-width:577px){
+    .main-content h2 {
+        font-size: 18px;
+    }
+    .logo img{
+        max-width: 150px;
+    }
+    .main-header {
+        padding: 0px;
+    }
+    .main-buttons {
+        display: block;
+        text-align: center;
+    }
+    .check{
+        margin-top:1rem;
+    }
+    .donate {
+        margin-left: 0rem;
+        margin-top: 1rem;
+        padding: 10px 52px;
+    }
+    .main-section {
+        padding-bottom: 10rem;
+    }
+}

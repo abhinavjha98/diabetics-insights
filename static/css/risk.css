@@ -1,0 +1,136 @@
+.risk-section {
+    background-image: url(../Images/home-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+.risk-content h2 {
+    color: #121518;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.risk-content p {
+    color: #293648;
+    font-size: 18px;
+    opacity: 0.8;
+    line-height: 1.7;
+    padding-top: 1rem;
+}
+
+.risk-main {
+    background: linear-gradient(90.07deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.192) 99.84%);
+    backdrop-filter: blur(12px);
+    border-radius: 6px;
+    padding:1.75rem;
+    margin-top:1rem;
+    margin-bottom:1.5rem;
+}
+.risk-illustration{
+    text-align: center;
+}
+
+.risk-illustration img {
+    max-width: 100%;
+    margin-top: 7rem;
+}
+.risk-illustration p{
+    color: #293648;
+    font-size: 18px;
+    opacity: 0.8;
+    line-height: 1.7;
+    padding-top: 1rem;
+}
+
+label{
+    color:#121518;
+    font-weight:600;
+}
+.male-female {
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.box {
+    background: #FFFFFF;
+    border: 1px solid #DFDEEC;
+    border-radius: 6px;
+    padding:15px;
+}
+
+.modal.and.carousel {
+    position: fixed;
+  }
+  .guage{
+    background: rgba(51, 211, 124, 0.08);
+border-radius: 12px;
+text-align: center;
+padding:15px;
+  }
+  .guage h2{
+    color:#293648;
+    font-size:20px;
+    font-weight: 600;
+  }
+  .guage span{
+    color:#31D17A;
+    font-size:20px;
+    font-weight: 600;
+    padding-left:5px;
+  }
+  .guage p{
+    color: #293648;
+    font-size: 18px;
+    opacity: 0.8;
+    line-height: 1.7;
+    padding-top: 1rem;
+  }
+  #chartdiv {
+    width: 600px;
+    height: 375px;
+    margin:0 auto;
+  }
+  .modal-footer {
+    justify-content: center;
+}
+.main-buttons .modal-risk{
+    text-decoration: none;
+    color:#fff;
+}
+.main-buttons .modal-reset{
+    text-decoration: none;
+    color:#5376F2;
+}
+@media (max-width: 577px){
+    .main-buttons {
+        display: block!important;
+        text-align: center;
+    }
+    .check{
+        padding: 10px 46px!important;
+    }
+    .risk-content h2 {
+        font-size: 21px;
+    }
+    .risk-content p {
+        font-size: 16px;
+    }
+    .male{
+        max-width: 15px;
+    }
+    .female{
+        max-width: 15px;
+    }
+    .risk-section {
+        padding-bottom: 2rem;
+    }
+}

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diabetes Inshight</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.koolchart.com/demo/KoolChart/Assets/Css/KoolChart.css"/>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/risk.css">
+</head>
+<body>
+  
+    <!--section-1-start-->
+    <section class="risk-section">
+        <!--header-start-->
+        <header class="main-header">
+            <div class="container">
+              <nav class="navbar navbar-expand-md bg-light navbar-light">
+                <!-- Brand -->
+                <div class="logo">
+                    <img src="./static/Images/logo.png" alt="logo">
+                </div>
+               
+              
+                <!-- Toggler/collapsibe Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="risk">Risk Prediction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Studies</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Tips</a>
+                      </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <form method="POST" action="risk" enctype="multipart/form-data">
+              {% csrf_token %}
+            
+                              <!--risk-main-section-start-->
+                              <section class="risk-main">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="risk-content">
+                                                <h2>Diabetes risk predictor</h2>
+                                                <p>We help you to predict your diabetes level with a good accuracy within “60 seconds”</p>
+                                                <div class="row mt-2">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Name (optional)</label>
+                                                            <input type="text" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp" placeholder="Enter your name">
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="exampleInputEmail1">Gender</label>
+                                                                <div class="male-female d-flex">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="exampleRadios" id="gender1" value="option1" checked>
+                                                                        <img class="male" src="./static/Images/male.png" alt="">
+                                                                        <label class="form-check-label" for="exampleRadios1">
+                                                                          Male
+                                                                        </label>
+                                                                      </div>
+                                                                      <div class="form-check pl-5">
+                                                                        <input class="form-check-input" type="radio" name="exampleRadios" id="gender2" value="option1" >
+                                                                        <img class="female"src="./static/Images/female.png" alt="">
+                                                                        <label class="form-check-label" for="exampleRadios1">
+                                                                          Female
+                                                                        </label>
+                                                                      </div>
+                                                                </div>
+                                                              </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="exampleFormControlSelect1">Age</label>
+                                                            <select class="form-control" name="group" id="exampleFormControlSelect1" placeholder="Enter your name">
+                                                              <option>Please select you age</option>
+                                                              <option>20-30</option>
+                                                              <option>30-40</option>
+                                                              <option>50-60</option>
+                                                              <option>60-70</option>
+                                                              <option>70-80</option>
+                                                            </select>
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="exampleFormControlSelect1">Children</label>
+                                                            <select class="form-control" name="children" id="childrencheckbox" aria-label="Disabled select example" disabled>
+                                                              <option>Please select number of children</option>
+                                                              <option>1</option>
+                                                              <option>2</option>
+                                                              <option>3</option>
+                                                              <option>4</option>
+                                                              <option>5</option>
+                                                              <option>6</option>
+                                                              <option>Above 7</option>
+                                                            </select>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-md-6">
+                                                        <label>Blood Pressure<span class="pl-3"><img src="./static/Images/help.png" alt=""></span></label>
+                                                        <div class="box">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option1" checked>
+                                                                <label class="form-check-label" for="exampleRadios1">
+                                                                    0-30 mm/hg
+                                                                </label>
+                                                              </div>
+                                                              <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option2" >
+                                                                <label class="form-check-label" for="exampleRadios1">
+                                                                    31-60 mm/hg
+                                                                </label>
+                                                              </div>
+                                                              <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option3">
+                                                                <label class="form-check-label" for="exampleRadios1">
+                                                                    61-90 mm/hg
+                                                                </label>
+                                                              </div>
+                                                              <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option4">
+                                                                <label class="form-check-label" for="exampleRadios2">
+                                                                    91-120 mm/hg
+                                                                </label>
+                                                              </div>
+                                                              <div class="form-check disabled">
+                                                                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option5" >
+                                                                <label class="form-check-label" for="exampleRadios2">
+                                                                    above 120 mm/hg
+                                                                </label>
+                                                              </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>Gulcose<span class="pl-3"><img src="./static/Images/help.png" alt=""></span></label>
+                                                        <div class="box">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option1" checked>
+                                                                <label class="form-check-label" for="exampleRadios1">
+                                                                    120-140 mg/dl
+                                                                </label>
+                                                              </div>
+                                                              <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2">
+                                                                <label class="form-check-label" for="exampleRadios2">
+                                                                    141-160 mg/dl
+                                                                </label>
+                                                              </div>
+                                                              <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option3">
+                                                                <label class="form-check-label" for="exampleRadios2">
+                                                                    161-180 mg/dl
+                                                                </label>
+                                                              </div>
+                                                              <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option4">
+                                                                <label class="form-check-label" for="exampleRadios2">
+                                                                    181-200 mg/dl
+                                                                </label>
+                                                              </div>
+                                                              <div class="form-check disabled">
+                                                                <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option5">
+                                                                <label class="form-check-label" for="2">
+                                                                    above 200 mg/dl
+                                                                </label>
+                                                              </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                  <div class="col-md-12">
+                                                      <form>
+                                                          <div class="form-group">
+                                                            <label for="formControlRange">Insulin</label>
+                                                            <input type="range" class="form-control-range" name="insulin" id="formControlRange" onInput="$('#rangeval').html($(this).val())" max="850">
+                                                            <span id="rangeval">400<!-- Default value --></span>
+                                                          </div>
+                                                        
+                                                  </div>
+                                              </div>
+                                                <div class="row mt-2">
+                                                  <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleFormControlSelect1">Height Range</label>
+                                                        <select class="form-control" name="height" id="exampleFormControlSelect1" placeholder="Enter your name">
+                                                          <option>Please select your height(cms)</option>
+                                                          <option>130-140</option>
+                                                          <option>141-150</option>
+                                                          <option>151-160</option>
+                                                          <option>161-170</option>
+                                                          <option>171-180</option>
+                                                          <option>Above 180</option>
+                                                        </select>
+                                                      </div>
+                                                </div>
+                                                
+                                                    <!-- <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Insulin</label>
+                                                            <div class="male-female d-flex">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios1" value="option1" checked>
+                                                                    <label class="form-check-label" for="exampleRadios1">
+                                                                      Yes
+                                                                    </label>
+                                                                  </div>
+                                                                  <div class="form-check pl-5">
+                                                                    <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios1" value="option1" checked>
+                                                                    <label class="form-check-label" for="exampleRadios1">
+                                                                      No
+                                                                    </label>
+                                                                  </div>
+                                                            </div>
+                                                          </div>
+                                                    </div> -->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Weight</label>
+                                                            <input type="number" class="form-control" name="weight" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your weight">
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-md-12">
+                                                        <form>
+                                                            <div class="form-group">
+                                                              <label for="formControlRange">Skin thickness</label>
+                                                              <input type="range" class="form-control-range" name="skin" id="formControlRange" onInput="$('#rangevals').html($(this).val())">
+                                                              <span id="rangevals">50<!-- Default value --></span>
+                                                            </div>
+                                                          
+                                                    </div>
+                                                </div>
+                                                <div class="main-buttons d-flex align-center justify-content-center">
+                                                    <button href="" data-toggle="modal" class="check"><img class="pr-3" src="./static/Images/results.png" alt="">Results</button>
+                                                    <button class="donate"><img class="pr-3" src="./static/Images/reset.png" alt="">Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="risk-illustration">
+                                                <img src="./static/Images/risk-illustration.png" alt="">
+                                                <p>“Between 2012 to 2022 diabetes rise in 25%  in this 10 years all around the world,
+                                                    12% alone in korea is the highest”</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </section>
+                            </form>
+                              <!--risk-main-section-end-->
+        </header>
+        <!--header-end-->
+    </section>
+  
+        <!--section-1-end-->
+        <div class="modal fade and carousel slide" id="lightbox">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="guage">
+                        <h2>You are at <span>Low Risk</span></h2>
+                        <div class="guage-process">
+                            <div id="chartdiv"></div>
+                        </div>
+                        <p>You are risk free now, after the age of 50 mostly diabetes have possibilities to avolve. So stay healthy & stay updated</p>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <div class="main-buttons d-flex align-center justify-content-center">
+                        <button href="#lightbox" data-toggle="modal" class="check"><img class="pr-3" src="./static/Images/results.png" alt=""><a class="modal-risk" href="risk.html">Start again</a></button>
+                        <button class="donate"><a class="modal-reset" href="">About Diabetes</a><img class="pl-3" src="./static/Images/reset.png" alt=""></button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+<script>
+    var activeNavItem = $('.nav-item');
+
+activeNavItem.click(function(){
+  activeNavItem.removeClass('active');
+  $(this).addClass('active');  
+});
+$(document).ready(function () {
+   
+    $("#gender1").click(function () {
+      document.getElementById("childrencheckbox").disabled= true;
+    });
+    $("#gender2").click(function () {
+      document.getElementById("childrencheckbox").disabled= false;
+    });
+});
+</script>
+<script>
+    am4core.useTheme(am4themes_animated);
+
+var chartMin = 0;
+var chartMax = 500;
+
+var data = {
+  score: 52.7,
+  gradingData: [
+    {
+      title: " Risk",
+      advice: "Your At Risk",
+      color: "#E53935",
+      lowScore: 0,
+      highScore: 100
+    },
+    {
+      title: "Warning",
+      advice: "Your reaching to the Risk",
+      color: "#FB8C00",
+      lowScore: 100,
+      highScore: 150
+    },
+    {
+      title: "OK",
+      advice: "Good",
+      color: "#43A047",
+      lowScore: 150,
+      highScore: 500
+    }
+  ]
+};
+
+/**
+Grading Lookup
+ */
+function lookUpGrade(lookupScore, grades) {
+  // Only change code below this line
+  for (var i = 0; i < grades.length; i++) {
+    if (
+      grades[i].lowScore < lookupScore &&
+      grades[i].highScore >= lookupScore
+    ) {
+      return grades[i];
+    }
+  }
+  return null;
+}
+
+// create chart
+var chart = am4core.create("chartdiv", am4charts.GaugeChart);
+chart.hiddenState.properties.opacity = 0;
+chart.fontSize = 11;
+chart.innerRadius = am4core.percent(80);
+chart.resizable = true;
+//chart.numberFormatter.numberFormat = "'$'#a";
+
+/**
+ * Normal axis
+ */
+
+var axis = chart.xAxes.push(new am4charts.ValueAxis());
+axis.min = chartMin;
+axis.max = chartMax;
+axis.strictMinMax = true;
+axis.renderer.radius = am4core.percent(80);
+axis.renderer.inside = true;
+axis.renderer.line.strokeOpacity = 0.1;
+axis.renderer.ticks.template.disabled = false;
+axis.renderer.ticks.template.strokeOpacity = 1;
+axis.renderer.ticks.template.strokeWidth = 0.5;
+axis.renderer.ticks.template.length = 5;
+axis.renderer.grid.template.disabled = true;
+axis.renderer.labels.template.radius = am4core.percent(20);
+axis.renderer.labels.template.fontSize = "0.9em";
+
+/**
+ * Axis for ranges
+ */
+
+var axis2 = chart.xAxes.push(new am4charts.ValueAxis());
+axis2.min = chartMin;
+axis2.max = chartMax;
+axis2.strictMinMax = true;
+axis2.renderer.labels.template.disabled = true;
+axis2.renderer.ticks.template.disabled = true;
+axis2.renderer.grid.template.disabled = false;
+axis2.renderer.grid.template.opacity = 0.5;
+axis2.renderer.labels.template.bent = true;
+axis2.renderer.labels.template.fill = am4core.color("#000");
+axis2.renderer.labels.template.fontWeight = "bold";
+axis2.renderer.labels.template.fillOpacity = 0.3;
+//axis2.numberFormatter.numberFormat = "'$'#,###"
+axis2.numberFormatter.numberFormat = "#a";
+
+
+/**
+Ranges
+*/
+
+for (let grading of data.gradingData) {
+  var range = axis2.axisRanges.create();
+  range.axisFill.fill = am4core.color(grading.color);
+  range.axisFill.fillOpacity = 0.8;
+  range.axisFill.zIndex = -1;
+  range.value = grading.lowScore > chartMin ? grading.lowScore : chartMin;
+  range.endValue = grading.highScore < chartMax ? grading.highScore : chartMax;
+  range.grid.strokeOpacity = 0;
+  range.stroke = am4core.color(grading.color).lighten(-0.1);
+  range.label.inside = true;
+  range.label.text = grading.title.toUpperCase();
+  range.label.inside = true;
+  range.label.location = 0.5;
+  range.label.inside = true;
+  range.label.radius = am4core.percent(10);
+  range.label.paddingBottom = -5; // ~half font size
+  range.label.fontSize = "0.9em";
+}
+
+var matchingGrade = lookUpGrade(data.score, data.gradingData);
+
+/**
+ * Value
+ */
+
+var label = chart.radarContainer.createChild(am4core.Label);
+label.isMeasured = false;
+label.fontSize = "6em";
+label.x = am4core.percent(50);
+label.paddingBottom = 5;
+label.horizontalCenter = "middle";
+label.verticalCenter = "bottom";
+//label.dataItem = data;
+label.text = data.score.toFixed(1);
+//label.text = "{score}";
+label.fill = am4core.color(matchingGrade.color);
+//label.numberFormatter.numberFormat = "'$'#a";
+
+/**
+ * Advice
+ */
+
+//var label2 = chart.radarContainer.createChild(am4core.Label);
+var label2 = chart.createChild(am4core.Label);
+label2.isMeasured = false;
+label2.fontSize = "1em";
+//label2.paddingTop = 150;
+label2.horizontalCenter = "middle";
+label2.verticalCenter = "bottom";
+//label2.text = matchingGrade.title.toUpperCase();
+label2.text = "hello";
+label2.fill = am4core.color(matchingGrade.color);
+label2.dx = 280;
+label2.dy = 320;
+
+/**
+ * Hand
+ */
+
+var hand = chart.hands.push(new am4charts.ClockHand());
+hand.axis = axis2;
+hand.radius = am4core.percent(85);
+hand.innerRadius = am4core.percent(50);
+hand.startWidth = 10;
+//hand.pixelHeight = 10;
+hand.pin.disabled = true;
+hand.value = data.score;
+hand.fill = am4core.color("#444");
+hand.stroke = am4core.color("#000");
+
+hand.events.on("positionchanged", function(){
+  var t = axis2.positionToValue(hand.currentPosition).toFixed(0);
+  var formattedValue = chart.numberFormatter.format(t, "#.#a");
+  label.text = formattedValue;
+  //label.text = axis2.positionToValue(hand.currentPosition).toFixed(0);
+  //var value2 = axis.positionToValue(hand.currentPosition);
+  var matchingGrade = lookUpGrade(axis.positionToValue(hand.currentPosition), data.gradingData);
+  label2.text = matchingGrade.advice.toUpperCase();
+  label2.fill = am4core.color(matchingGrade.color);
+  label2.stroke = am4core.color(matchingGrade.color);  
+  label.fill = am4core.color(matchingGrade.color);
+})
+
+setInterval(function() {
+    var value = chartMin + Math.random() * (chartMax - chartMin);
+    hand.showValue(value, 1000, am4core.ease.cubicOut);
+}, 3000);
+</script>
+
+</html>
